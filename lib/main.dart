@@ -1,3 +1,4 @@
+import 'package:app01/Pages/LoginPage.dart';
 import 'package:app01/song_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,12 +13,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: '音乐播放器',
+    // return GetMaterialApp(
+    //   title: 'flutter-study',
+    //   theme: ThemeData(
+    //       // primarySwatch: Colors.blue,
+    //       ),
+    //   home: SongPage(),
+    // );
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: const Color(0xFFCEDDEE),
       ),
-      home: SongPage(),
+      routes: {
+        "/": (context) => LoginPage(),
+      },
+      // home: LoginPage(),
     );
   }
 }
